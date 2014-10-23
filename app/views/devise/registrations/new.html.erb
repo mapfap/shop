@@ -1,18 +1,85 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<center>
   <%= devise_error_messages! %>
+</center>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin", role: "form"}) do |f| %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <h2 class="form-signin-heading">Sign up</h2>
+  
 
-  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <%= f.email_field :email, autofocus: true, placeholder: "Email address", required: true, class: "form-control" %>
+  
+  <% if false && @validatable %>
+    <i>(<%= @minimum_password_length %> characters minimum)</i>
+  <% end %>
+  <br />
+  
+  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %>
+  <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation", class: "form-control" %>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+   <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
 
-  <div><%= f.submit "Sign up" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<style>
+
+  body {
+    /*background-color: #eee;*/
+  }
+
+  #error_explanation h2 {
+    font-size: 16px;
+    display: none;
+  }
+
+  #error_explanation ul {
+    background: #ff6381;
+    padding: 10px;
+    border-radius: 5px;
+    width: 60%;
+  }
+
+  #error_explanation li {
+    list-style-type: none;
+    font-weight: bold;
+  }
+
+
+
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 30px;
+  }
+  .form-signin .checkbox {
+    font-weight: normal;
+  }
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+
+</style>
