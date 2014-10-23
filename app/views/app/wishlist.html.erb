@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+		<title>Wishlist</title>
+		
+		<div class="wishlist">
+				<h1>Wishlist</h1>
+		</div>
+		<div class="wish_table">
+				<table class="table1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Total Price</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1100</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <th scope="row"><img class="product_pic" src="image/pic2.jpg"></th>
+                        <td>Tent</td>
+                        <td>1000</td>
+                        <td><input type="number" class="quan" name="quantity" min="1"></td>
+                        <td>1000</td>
+                        <td><button type="submit" value="Submit"><img class="cart" src="image/cart2.png"></button></td>
+                        <td><button type="button"><img class="del" src="image/del.jpg"></button></td>
+                    </tr>
+                     <tr>
+                        <th scope="row"><img class="product_pic" src="image/pic1.jpg"></th>
+                        <td>Pump</td>
+                        <td>100</td>
+                        <td><input type="number" class="quan" name="quantity" min="1"></td>
+                        <td>100</td>
+                       	<td><button type="submit" value="Submit"><img class="cart" src="image/cart2.png"></button></td>
+                        <td><button type="button"><img class="del" src="image/del.jpg"></button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+         </div>            
+	
+</html>
+<style>
+body{
+	margin : 0px !important;
+	height : 100%;
+	max-width : 100%;
+	background-color:blue;
+}
+h1{
+	font-size: 40px;
+}
+.wishlist {
+	max-width:100%;
+	height:17%;
+	margin-top:5%;
+	left:0;
+	background-color:yellow;
+	padding-left: 15%;
+	padding-top: 3%;
+}
+.wish_table{
+	margin-top: 3%;
+	max-width:100%;
+	height:100%;
+	top:30%;
+	left:0;
+	background-color:#686262;
+}
+
+/* Table 1 Style */
+table.table1{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5em;
+    font-style: normal;
+    border-collapse:separate;
+    margin-right: auto;
+    margin-left: auto;
+}
+.table1 thead th{
+    padding:15px;
+    color:#fff;
+    text-shadow:1px 1px 1px #568F23;
+    border:5px solid #93CE37;
+    border-bottom:3px solid #9ED929;
+    background-color:#9DD929;
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.02, rgb(123,192,67)),
+        color-stop(0.51, rgb(139,198,66)),
+        color-stop(0.87, rgb(158,217,41))
+        );
+    background: -moz-linear-gradient(
+        center bottom,
+        rgb(123,192,67) 2%,
+        rgb(139,198,66) 51%,
+        rgb(158,217,41) 87%
+        );
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius:5px 5px 0px 0px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+.table1 thead th:empty{
+    background:transparent;
+    border:none;
+}
+.table1 tbody th{
+    color:#fff;
+    text-shadow:1px 1px 1px #568F23;
+    background-color:#9DD929;
+    border:1px solid #93CE37;
+    border-right:3px solid #9ED929;
+    padding:0px 10px;
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.02, rgb(158,217,41)),
+        color-stop(0.51, rgb(139,198,66)),
+        color-stop(0.87, rgb(123,192,67))
+        );
+    background: -moz-linear-gradient(
+        left bottom,
+        rgb(158,217,41) 2%,
+        rgb(139,198,66) 51%,
+        rgb(123,192,67) 87%
+        );
+    -moz-border-radius:5px 0px 0px 5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+.table1 tfoot td{
+    color: #9CD009;
+    font-size:32px;
+    text-align:center;
+    padding:10px 0px;
+    text-shadow:1px 1px 1px #444;
+}
+.table1 tfoot th{
+    color:#FFFFFF;
+}
+.table1 tbody td{
+    padding:10px;
+    text-align:center;
+    background-color:#DEF3CA;
+    border: 2px solid #E7EFE0;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    color:#666;
+    text-shadow:1px 1px 1px #fff;
+}
+.product_pic{
+	width: 100px;
+	height: 100px;
+	margin-top: 8px;
+	margin-left: -3px;
+}
+.cart{
+	width: 50px;
+	height: 50px;
+	margin-top: 8px;
+	margin-left: -3px;
+}
+.del{
+	width: 50px;
+	height: 50px;
+	margin-top: 8px;
+	margin-left: -3px;
+}
+.quan{
+	width: 50px;
+	height: 25px;
+}
+</style>

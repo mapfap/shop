@@ -43,6 +43,22 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'catalog#index'
 
+  get 'catalog' => 'catalog#index'
+  get 'app' => 'app#index'
+  
+  get 'app/category' => 'app#category'
+  get 'app/home' => 'app#home'
+  get 'app/payment_method' => 'app#payment_method'
+  get 'app/pproduct' => 'app#pproduct'
+  get 'app/product' => 'app#product'
+  get 'app/profile' => 'app#profile'
+  get 'app/sales_record' => 'app#sales_record'
+  get 'app/sales_summary' => 'app#sales_summary'
+  get 'app/search' => 'app#search'
+  get 'app/shipping_address' => 'app#shipping_address'
+  get 'app/transacton_detail' => 'app#transacton_detail'
+  get 'app/wishlist' => 'app#wishlist'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
