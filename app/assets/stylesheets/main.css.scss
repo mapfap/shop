@@ -26,12 +26,60 @@ html, body {
   padding-left: 15px; 
 }
 
-.cart-popup {
-  text-align: center;
-  line-height: 400px;
-  font-size: 20px;
-  cursor: pointer;
+.order-item {
+  display: block;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-radius: 9px;
+  width: 95%;
+  background: #f2f2f2;
+  padding: 2px;
+  margin-bottom: 2px;
+  height:25px;
+}
 
+.i-left {
+  float: left;
+}
+
+.i-right {
+  float: right;
+}
+
+.i-name {
+  text-align: right;
+  display: inline-block;
+  background: white;
+  padding: 0px 10px 0px 10px;
+  width: 112px;
+  margin-left: 2px;
+}
+
+.i-quantity {
+  text-align: right;
+  display: inline-block;
+  background: white;
+  padding: 0px 6px 0px 10px;
+  width: 35px;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.i-icon {
+  cursor: pointer;
+  border-radius: 8px;
+  background: white;
+  display: inline-block;
+  padding: 0px 6px 1px 5px;
+}
+
+.small-icon {
+  font-size: 10px;
+}
+
+.cart-popup {
+  padding-top: 30px;
+  text-align: center;
   position: fixed;
   top: 60px;
   right: 30px;
