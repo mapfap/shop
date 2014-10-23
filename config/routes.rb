@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :members, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :models
   resources :product_description_images
 
   resources :product_thumbnails
@@ -39,7 +41,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'catalog#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
