@@ -41,6 +41,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -56,6 +58,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -71,6 +75,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -86,6 +92,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -101,6 +109,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -116,6 +126,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -131,6 +143,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -146,6 +160,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -161,6 +177,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -176,6 +194,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -191,6 +211,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -206,6 +228,8 @@
   <div class="col-md-3">
     <div class="product-container">
       <div class="product">
+        <%= image_tag "shadow-right.png", class: "shadow-right" %>
+        <%= image_tag "shadow-left.png", class: "shadow-left" %>
         <div class="quick-pick">
           <span class="glyphicon glyphicon-shopping-cart"></span>
         </div>
@@ -229,6 +253,47 @@
         alert("added");
       });
     });
+
+    // var width = 0;
+    // var first = true;
+
+    $(".product").on("mousemove", function(event) {
+      // $( "#log" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+
+      // if (first) {
+        width = $(this).offset().left;
+        // first = false;
+      // }
+
+      var x = event.pageX - width;
+
+      // var deg = (x - (width/2));
+      // var deg = (x - 105) / 5.0
+      // console.log(deg)
+      // var deg = ( x > 105 ) ? -5 : 5;
+      var deg = ( x <= 105 ) ? -10 : 10;
+
+      if ( deg < 0 ) {
+        $(".shadow-right").css("opacity", "0");
+        $(this).children(".shadow-left").css("opacity", "0.3");
+      } else {
+        $(".shadow-left").css("opacity", "0");
+        $(this).children(".shadow-right").css("opacity", "0.3");
+      }
+
+      $(this).css("-webkit-transform", "rotateY(" + deg + "deg)");
+
+    });
+
+
+    $(".product").on("mouseout", function(event) {
+      // first = true;
+      $(this).css("-webkit-transform", "rotateY(" + 0 + "deg)");
+      $(".shadow-left").css("opacity", "0");
+      $(".shadow-right").css("opacity", "0");
+    });
+
+
   });
 </script>
 <style>
@@ -248,6 +313,7 @@
   .product-container {
     padding: 10px;
     position: relative;
+    -webkit-perspective: 400;
   }
 
   .product {
@@ -257,6 +323,20 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+
+    /*-webkit-transform: rotateY(0deg);*/
+
+  }
+
+  .product:hover {
+    /*-webkit-transform: rotateY(-10deg);*/
+    background: #82FFAA;
   }
 
   .product:hover > .product-name {
@@ -308,6 +388,12 @@
 
   .quick-pick:hover {
     background: rgba(0, 128, 255, 0.7);
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    -ms-transform: scale(2);
+
   }
 
   .product-price {
@@ -321,6 +407,30 @@
     background: rgba(0, 0, 0, 0.7);
     text-align: center;
     border-radius: 5px;
+  }
+
+  .shadow-left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+  }
+
+  .shadow-right {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
   }
 
   .carousel {
