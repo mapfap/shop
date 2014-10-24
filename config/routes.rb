@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
   get 'catalog' => 'catalog#index'
   get 'app' => 'app#index'
+  get 'profile' => 'app#user_profile'
   
   get 'app/category' => 'app#category'
   get 'app/home' => 'app#home'

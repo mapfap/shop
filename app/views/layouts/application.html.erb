@@ -41,14 +41,23 @@
               <li><a href="#">Payment</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">Settings</li>
-              <li><a href="#">Change Password</a></li>
-              <li><a href="#">Logout</a></li>
+              <li><a href="/profile">Profile</a></li>
+              <li>
+                <%= link_to "Change password", edit_member_registration_path %>
+              </li>
+              
+              <li>
+                <% if current_member %>
+                  <%= link_to "Logout", destroy_member_session_path, :method => :delete %>
+                <% end %>
+              </li>
+
             </ul>
           </li>
         </ul>
          <p class="navbar-text navbar-right">
           <% if current_member %>
-            <%= link_to "Logout", destroy_member_session_path, :method => :delete, class: "navbar-link" %>
+            Hello, <%= current_member.email %>
           <% else %>
             <%= link_to "Login", new_member_session_path, class: "navbar-link" %>
           <% end %>
@@ -76,7 +85,7 @@
         <% if alert %>
           <div class="alert alert-danger">
             <a href="#" class="close" data-dismiss="alert">&times;</a>
-            <strong>Error!</strong> <%= alert %>
+            <strong></strong> <%= alert %>
           </div>
         <% end %>
 
